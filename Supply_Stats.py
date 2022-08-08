@@ -163,7 +163,7 @@ with st.spinner('Updating Report...'):
         generate_supply_charts(chart_data)
 
     if activation_function == 'Polygon v2':
-        st.write('Lack of Data (database is updating and is not fully backfill yet)')
+        st.warning('The database is in the process of updating and has not been fully backfilled')
         chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v2-polygon-extended')
         generate_supply_charts(chart_data)
 
