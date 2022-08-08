@@ -80,7 +80,7 @@ fig.update_layout(hovermode="x unified")
 fig.update_layout(title_x=0, margin=dict(l=0, r=10, b=10, t=30), yaxis_title=None, xaxis_title=None)
 st.plotly_chart(fig, use_container_width=True)
 
-fig = px.bar(chart_data, x='Day', y='TOTAL_STAKED_USD', color='COLOR', title="Daily Deposit in USD",
+fig = px.bar(chart_data, x='Day', y='TOTAL_STAKED_USD', color='COLOR', title="Daily Net Stake(staked-unstakes) in USD",
              template='seaborn')
 fig.update_traces(hovertemplate=None)
 fig.update_layout(hovermode="x unified")

@@ -139,11 +139,15 @@ def generate_supply_charts(chart_data):
 
 with st.spinner('Updating Report...'):
     activation_function = st.selectbox('Choose a Chain',
-                                       ['Avalanche', 'Ethereum', 'Optimism', 'Fantom', 'Arbitrum',
-                                        'Harmony', 'Polygon'])
+                                       ['Avalanche v2', 'Avalanche v3', 'Ethereum', 'Optimism', 'Fantom', 'Arbitrum',
+                                        'Harmony', 'Polygon v2', 'Polygon v3'])
 
-    if activation_function == 'Avalanche':
+    if activation_function == 'Avalanche v2':
         chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v2-avalanche-extended')
+        generate_supply_charts(chart_data)
+
+    if activation_function == 'Avalanche v3':
+        chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v3-avalanche')
         generate_supply_charts(chart_data)
 
     if activation_function == 'Ethereum':
@@ -154,8 +158,13 @@ with st.spinner('Updating Report...'):
         chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v3-optimism-extended')
         generate_supply_charts(chart_data)
 
-    if activation_function == 'Polygon':
+    if activation_function == 'Polygon v3':
         chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v3-polygon-extended')
+        generate_supply_charts(chart_data)
+
+    if activation_function == 'Polygon v2':
+        st.write('Lack of Data (database is updating and is not fully backfill yet)')
+        chart_data = fetch_data('https://api.thegraph.com/subgraphs/name/messari/aave-v2-polygon-extended')
         generate_supply_charts(chart_data)
 
     if activation_function == 'Harmony':
