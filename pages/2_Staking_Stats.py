@@ -59,8 +59,8 @@ c1.metric("Current Staked in Aave", "{:,}".format(today_staked_aave))
 c2.metric("Aave Staked Changes(1 month)", "{:,}".format(today_staked_aave - one_month_ago_staked_aave),
           f"{round(get_change(today_staked_aave, one_month_ago_staked_aave), 2)}%",
           delta_color=get_delta_color(one_month_ago_staked_aave, today_staked_aave))
-c3.metric("Current Staked in USD", "{:,}".format(today_staked_usd))
-c4.metric("USD Staked Changes(1 month)", "{:,}".format(today_staked_usd - one_month_ago_staked_usd),
+c3.metric("Current Staked in USD", "${:,}".format(today_staked_usd))
+c4.metric("USD Staked Changes(1 month)", "${:,}".format(today_staked_usd - one_month_ago_staked_usd),
           f"{round(get_change(today_staked_usd, one_month_ago_staked_usd), 2)}%",
           delta_color=get_delta_color(one_month_ago_staked_usd, today_staked_usd))
 st.markdown("""---""")

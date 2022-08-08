@@ -66,8 +66,8 @@ def generate_supply_charts(chart_data):
 
     # Metrics
     c1, c2, c3, c4 = st.columns(4, gap="small")
-    c2.metric("Current USD TVL", "{:,}".format(today_tvl))
-    c3.metric("USD TVL Changes(1 month)", "{:,}".format(today_tvl - one_month_ago_tvl),
+    c2.metric("Current USD TVL", "${:,}".format(today_tvl))
+    c3.metric("USD TVL Changes(1 month)", "${:,}".format(today_tvl - one_month_ago_tvl),
               f"{round(get_change(today_tvl, one_month_ago_tvl), 2)}%",
               delta_color=get_delta_color(one_month_ago_tvl, today_tvl))
     st.markdown("""---""")
